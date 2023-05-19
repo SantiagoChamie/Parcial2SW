@@ -1,0 +1,36 @@
+<div class="row">
+  <div class = 'col-6'>
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Nombre</th>
+      <th>País</th>
+      <th>Género</th>
+      <th>Fundación</th>
+    </tr>
+  </thead>
+  <tbody id="bandas">
+    <tr *ngFor="let banda of bandas">
+      <td>{{banda.id}}</td>
+      <td><a href="#" (click)="selectBanda(banda)">{{banda.name}}</a></td>
+      <td>{{banda.country}}</td>
+      <td>{{banda.genre}}</td>
+      <td>{{banda.foundation_year}}</td>
+    </tr>
+    <tr>
+      <td colspan = "1">
+      <td colspan="3">{{getOldestBand()}}</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{{ selectedBanda?.image }}" class="card-img-top" alt="{{ selectedBanda?.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ selectedBanda?.name }}</h5>
+    <p class="card-text">{{ selectedBanda?.description }}</p>
+  </div>
+</div>
+
